@@ -1,0 +1,142 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            /* Latar belakang gradasi sangat halus (putih ke biru/ungu muda) */
+            background: linear-gradient(135deg, #f8f9fa 0%, #e0f2fe 50%, #f3e8ff 100%);
+        }
+
+        /* --- HEADER / NAVBAR --- */
+        .navbar-custom {
+            /* Efek kaca (Glassmorphism) transparan */
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .text-gradient-logo {
+            background: linear-gradient(90deg, #9b51e0, #4ac1e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* --- TYPOGRAPHY (SUPER TEBAL) --- */
+        .text-gradient-19 {
+            background: linear-gradient(135deg, #7b4ae2 0%, #00b87c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 8.5rem; 
+            font-weight: 900; /* Paling tebal */
+            line-height: 0.9;
+            letter-spacing: -4px; /* Huruf dirapatkan */
+            margin-bottom: -5px;
+        }
+
+        .text-juta {
+            color: #2b5c6b; 
+            font-size: 4rem;
+            font-weight: 900; /* Paling tebal */
+            line-height: 1;
+            letter-spacing: -1px;
+            margin-bottom: 0px;
+        }
+
+        .text-gradient-pendidikan {
+            background: linear-gradient(90deg, #9b51e0 0%, #00b87c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 4.5rem;
+            font-weight: 900; /* Paling tebal */
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #444;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
+
+        /* --- BUTTONS GRADIENT --- */
+        .btn-custom-gradient {
+            background: linear-gradient(45deg, #9452ff 0%, #4ac1e0 50%, #00b87c 100%);
+            background-size: 200% auto;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 12px 45px;
+            border: none;
+            transition: 0.5s ease;
+            box-shadow: 0 4px 15px rgba(148, 82, 255, 0.3);
+        }
+
+        .btn-custom-gradient:hover {
+            background-position: right center; /* Efek gradasi bergerak saat di-hover */
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 184, 124, 0.4);
+        }
+
+        /* --- FOOTER GRADIENT & TEXT MENARIK --- */
+        footer {
+            /* Gradasi footer yang kaya warna dari biru ke tosca */
+            background: linear-gradient(135deg, #0d82b5 0%, #129dd3 50%, #08b89d 100%);
+            margin-top: auto;
+            position: relative;
+            box-shadow: 0 -10px 25px rgba(0,0,0,0.1);
+        }
+
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer-icon-img {
+            width: 85px; 
+            height: 85px;
+            object-fit: contain;
+            background-color: white; 
+            padding: 5px; 
+            border-radius: 18px; /* Lebih membulat */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan ikon */
+            margin-bottom: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efek mengambang saat kursor diarahkan ke ikon */
+        .footer-icon-img:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+
+        /* Styling teks footer baru */
+        .footer-text {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase; /* Huruf kapital semua agar rapi */
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3); /* Efek timbul */
+            margin: 0;
+        }
+
+        /* --- RESPONSIVE DESIGN (UNTUK HP) --- */
+        @media (max-width: 768px) {
+            .text-gradient-19 { font-size: 6.5rem; }
+            .text-juta { font-size: 2.8rem; }
+            .text-gradient-pendidikan { font-size: 3.2rem; }
+            .footer-icon-img { width: 70px; height: 70px; }
+            .footer-text { font-size: 0.8rem; }
+            .btn-custom-gradient { padding: 10px 30px; font-size: 1rem; }
+        }
