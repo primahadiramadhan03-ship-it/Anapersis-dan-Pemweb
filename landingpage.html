@@ -16,28 +16,74 @@
         </div>
     </header>
 
-    <main class="container d-flex flex-column align-items-center justify-content-center text-center flex-grow-1 my-5">
-        
-        <div class="d-flex flex-column align-items-center">
+    <main class="hero-section flex-grow-1 position-relative overflow-hidden">
+    
+    <!-- Layer 1: Gambar Background -->
+    <img src="image.png" alt="Hero Illustration" class="hero-bg-img position-absolute top-0 start-0 w-100 h-100">
+    
+    <!-- Layer 2: Overlay Gradasi -->
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+    <!-- Layer 3: Konten Teks (kanan) -->
+    <div class="position-relative z-1 w-100 d-flex align-items-center justify-content-end px-5 py-5">
+        <div class="hero-text-block text-end">
             <h1 class="text-gradient-19">19</h1>
             <h2 class="text-juta">Juta</h2>
             <h1 class="text-gradient-pendidikan">Pendidikan</h1>
+            <p class="hero-subtitle mt-3">
+                Memetakan Akses Pendidikan untuk Indonesia<br>yang Lebih Merata
+            </p>
+            <div class="d-flex gap-3 justify-content-end mt-2">
+                <a href="#" class="btn btn-custom-gradient rounded-pill">Daftar</a>
+                <a href="#" class="btn btn-custom-gradient rounded-pill">Login</a>
+            </div>
         </div>
+    </div>
 
-        <p class="hero-subtitle">
-            Memetakan Akses Pendidikan untuk Indonesia<br>yang Lebih Merata
-        </p>
+</main>
 
-        <div class="d-flex gap-3 mt-2">
-            <a href="#" class="btn btn-custom-gradient rounded-pill">Daftar</a>
-            <a href="#" class="btn btn-custom-gradient rounded-pill">Login</a>
-        </div>
+    <footer class="pt-5 pb-4 position-relative overflow-hidden">
+         <!-- DEKORASI BACKGROUND -->
+    <!-- Lingkaran blur besar kiri atas -->
+    <div class="position-absolute top-0 start-0 footer-blob-1"></div>
+    <!-- Lingkaran blur besar kanan bawah -->
+    <div class="position-absolute bottom-0 end-0 footer-blob-2"></div>
+    <!-- Pola titik-titik grid -->
+     <i class="bi bi-mortarboard-fill footer-deco-icon" style="top:8%;left:5%;font-size:2.5rem;opacity:0.10;transform:rotate(-15deg)"></i>
+    <i class="bi bi-book-fill footer-deco-icon" style="top:20%;left:88%;font-size:2rem;opacity:0.10;transform:rotate(12deg)"></i>
+    <i class="bi bi-globe-asia-australia footer-deco-icon" style="top:55%;left:3%;font-size:3rem;opacity:0.08;transform:rotate(5deg)"></i>
+    <i class="bi bi-pencil-fill footer-deco-icon" style="top:70%;left:91%;font-size:1.8rem;opacity:0.10;transform:rotate(-20deg)"></i>
+    <i class="bi bi-lightbulb-fill footer-deco-icon" style="top:40%;left:50%;font-size:1.5rem;opacity:0.07;transform:rotate(8deg)"></i>
+    <i class="bi bi-map-fill footer-deco-icon" style="top:80%;left:15%;font-size:2rem;opacity:0.09;transform:rotate(-10deg)"></i>
+    <i class="bi bi-wifi footer-deco-icon" style="top:15%;left:45%;font-size:1.6rem;opacity:0.08;transform:rotate(0deg)"></i>
+    <i class="bi bi-award-fill footer-deco-icon" style="top:65%;left:75%;font-size:2.2rem;opacity:0.09;transform:rotate(15deg)"></i>
 
-    </main>
-
-    <footer class="pt-5 pb-4">
+    <svg class="position-absolute top-0 start-0 w-100 h-100 footer-svg-lines" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <line x1="5%" y1="10%" x2="30%" y2="35%" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <line x1="30%" y1="35%" x2="55%" y2="20%" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <line x1="55%" y1="20%" x2="80%" y2="45%" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <line x1="80%" y1="45%" x2="95%" y2="25%" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <line x1="15%" y1="70%" x2="40%" y2="55%" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="40%" y1="55%" x2="65%" y2="75%" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="65%" y1="75%" x2="90%" y2="60%" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <circle cx="5%" cy="10%" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="30%" cy="35%" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="55%" cy="20%" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="80%" cy="45%" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="95%" cy="25%" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="15%" cy="70%" r="3" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="40%" cy="55%" r="3" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="65%" cy="75%" r="3" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="90%" cy="60%" r="3" fill="rgba(255,255,255,0.12)"/>
+    </svg>
+    <div class="position-relative" style="z-index:1;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 footer-dots"></div>
         <div class="container">
-            <div class="row justify-content-center align-items-start">
+            <div class="text-center mb-5">
+                <p class="footer-tagline-sub fw-medium opacity-75 text-white mb-0">Platform pemetaan akses pendidikan terlengkap dan terpercaya</p>
+                <div class="footer-divider mx-auto mt-4"></div>
+            </div>
+            <div class="row justify-content-center align-items-start mb-5">
                 
                 <div class="col-6 col-md-3 mb-4 mb-md-0 footer-item">
                     <img src="Screenshot 2026-03-13 002911.png" alt="Ikon Peta" class="footer-icon-img">
@@ -59,7 +105,68 @@
                     <p class="footer-text">Event<br>Edukasi</p>
                 </div>
 
+                <!-- <div class="row text-center footer-stats-bar rounded-4 py-4 mx-0 mb-5">
+            <div class="col-6 col-md-3 stat-item py-2">
+                <span class="d-block text-white fw-black fs-3">19 Juta+</span>
+                <span class="d-block text-white opacity-75 text-uppercase fw-semibold" style="font-size:0.75rem;letter-spacing:0.8px">Siswa Terdaftar</span>
             </div>
+            <div class="col-6 col-md-3 stat-item py-2">
+                <span class="d-block text-white fw-black fs-3">514</span>
+                <span class="d-block text-white opacity-75 text-uppercase fw-semibold" style="font-size:0.75rem;letter-spacing:0.8px">Kabupaten/Kota</span>
+            </div>
+            <div class="col-6 col-md-3 stat-item py-2 mt-3 mt-md-0">
+                <span class="d-block text-white fw-black fs-3">50.000+</span>
+                <span class="d-block text-white opacity-75 text-uppercase fw-semibold" style="font-size:0.75rem;letter-spacing:0.8px">Sekolah Terdata</span>
+            </div>
+            <div class="col-6 col-md-3 stat-item py-2 mt-3 mt-md-0">
+                <span class="d-block text-white fw-black fs-3">34</span>
+                <span class="d-block text-white opacity-75 text-uppercase fw-semibold" style="font-size:0.75rem;letter-spacing:0.8px">Provinsi Tercakup</span>
+            </div> -->
+        <!-- </div> -->
+        
+       
+        <!-- <div class="row align-items-start mb-4 g-4"> -->
+
+            <!-- Brand -->
+            <!-- <div class="col-12 col-md-4 text-center text-md-start">
+                <h4 class="text-white fw-black mb-2" style="font-family:'Nunito',sans-serif;font-size:1.2rem;">19JutaPendidikan</h4>
+                <p class="text-white opacity-75 fw-normal mb-0" style="font-size:0.88rem;line-height:1.6;">Inisiatif digital untuk memetakan dan meratakan akses pendidikan di seluruh pelosok Indonesia.</p>
+                <div class="d-flex gap-2 justify-content-center justify-content-md-start mt-3">
+                    <a href="#" class="footer-social-btn"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="footer-social-btn"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="footer-social-btn"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="footer-social-btn"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+
+                <div class="col-6 col-md-2 offset-md-1">
+                <h6 class="text-white fw-bold text-uppercase mb-3" style="font-size:0.85rem;letter-spacing:1px;">Fitur</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="footer-link-item">Peta Pendidikan</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link-item">Cari Beasiswa</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link-item">Lokasi Wi-Fi</a></li>
+                    <li class="mb-2"><a href="#" class="footer-link-item">Event Edukasi</a></li>
+                </ul>
+            </div> -->
+
+             <!-- Newsletter -->
+            <!-- <div class="col-12 col-md-3 text-center text-md-start">
+                <h6 class="text-white fw-bold text-uppercase mb-3" style="font-size:0.85rem;letter-spacing:1px;">Info & Update</h6>
+                <p class="text-white opacity-75 fw-normal mb-2" style="font-size:0.85rem;">Dapatkan info beasiswa & event terbaru langsung di emailmu.</p>
+                <div class="input-group">
+                    <input type="email" class="form-control footer-input" placeholder="Email kamu...">
+                    <button class="btn footer-subscribe-btn" type="button">
+                        <i class="bi bi-send-fill"></i>
+                    </button>
+                </div>
+            </div> -->
+
+            <!-- Copyright -->
+        <div class="border-top pt-3 mt-2 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2" style="border-color:rgba(255,255,255,0.2)!important;">
+            <p class="text-white opacity-50 mb-0" style="font-size:0.82rem;">© 2026 19JutaPendidikan. Hak Cipta Dilindungi.</p>
+            <p class="text-white opacity-50 mb-0" style="font-size:0.82rem;">Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> untuk Indonesia</p>
+        </div>
+        </div>
         </div>
     </footer>
 
