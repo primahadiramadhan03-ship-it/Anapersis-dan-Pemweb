@@ -1,281 +1,385 @@
+/* === 1. GOOGLE FONTS & ROOT VARIABLES === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary-blue: #148fcd; /* Warna biru utama sesuai desain */
+    --primary-hover: #1072a4;
+    --bg-light: #eef5f9; /* Background biru sangat pudar */
+    --text-dark: #222222;
+}
+
+/* === 2. BASE STYLING === */
 body {
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            /* Latar belakang gradasi sangat halus (putih ke biru/ungu muda) */
-            background: linear-gradient(135deg, #f8f9fa 0%, #e0f2fe 50%, #f3e8ff 100%);
-        }
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        /* --- HEADER / NAVBAR --- */
-        .navbar-custom {
-            /* Efek kaca (Glassmorphism) transparan */
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 15px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-        }
+/* === 3. NAVBAR STYLING === */
+.navbar {
+    background-color: white; 
+}
 
-        .text-gradient-logo {
-            background: linear-gradient(90deg, #9b51e0, #4ac1e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
+.logo-text {
+    color: var(--primary-blue) !important;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
 
-        /* --- TYPOGRAPHY (SUPER TEBAL) --- */
-                .text-gradient-19 {
-            background: linear-gradient(135deg, #7b4ae2 0%, #00b87c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 8.5rem; 
-            font-weight: 900; /* Paling tebal */
-            line-height: 0.9;
-            letter-spacing: -4px; /* Huruf dirapatkan */
-            margin-bottom: -5px;
-        }
+.nav-link {
+    color: #444 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
 
-        .text-juta {
-            color: #2b5c6b; 
-            font-size: 4rem;
-            font-weight: 900; /* Paling tebal */
-            line-height: 1;
-            letter-spacing: -1px;
-            margin-bottom: 0px;
-        }
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-blue) !important;
+}
 
-        .text-gradient-pendidikan {
-            background: linear-gradient(90deg, #4a1e74 0%, #016342 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 4.5rem;
-            font-weight: 900; /* Paling tebal */
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
+.btn-nav {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    font-weight: 500;
+    border-radius: 6px;
+}
 
-        .hero-subtitle {
-            font-size: 1.15rem;
-            color: #444;
-            font-weight: 600;
-            margin-top: 15px;
-            margin-bottom: 35px;
-        }
-        /* --- HERO SECTION --- */
+.btn-nav:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+/* === 4. HERO SECTION STYLING === */
 .hero-section {
-    min-height: 460px;
-    margin-bottom: 0;
+    flex-grow: 1; /* Membuat hero section mengisi sisa tinggi layar */
+    padding: 3rem 0;
+
+    /* background-image: url('gambar-orang.png'); Ganti nama file jika perlu */
+    /* background-size: cover; Gambar akan menutupi seluruh area */
+    /* background-position: center; Gambar akan rata tengah */
+    /* background-repeat: no-repeat; */
 }
 
-.hero-bg-img {
-    object-fit: cover;
-    object-position: left center;
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3.2rem); /* Responsif: besar di laptop, mengecil di HP */
+    line-height: 1.25;
 }
 
-.hero-overlay {
-    background: linear-gradient(
-        to left,
-        rgba(240, 230, 255, 0.90) 0%,
-        rgba(220, 245, 255, 0.65) 45%,
-        rgba(200, 240, 255, 0.05) 100%
-    );
+.hero-title .text-blue {
+    color: var(--primary-blue);
 }
 
-.hero-text-block {
-    max-width: 430px;
+.hero-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .hero-section { min-height: 320px; }
-
-    /* Override Bootstrap justify-content-end ke center di mobile */
-    .hero-section .justify-content-end {
-        justify-content: center !important;
-    }
-
-    .hero-section > div {
-        justify-content: center !important;
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
-    }
-
-    .hero-text-block {
-        text-align: center !important;
-        max-width: 100%;
-    }
-
-    .hero-bg-img {
-        object-position: 20% center;
-    }
-
-    .hero-overlay {
-        background: linear-gradient(
-            to bottom,
-            rgba(240, 230, 255, 0.20) 0%,
-            rgba(220, 245, 255, 0.88) 55%
-        );
-    }
-}
-        
-
-        /* --- BUTTONS GRADIENT --- */
-        .btn-custom-gradient {
-            background: linear-gradient(45deg, #9452ff 0%, #4ac1e0 50%, #00b87c 100%);
-            background-size: 200% auto;
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            padding: 12px 45px;
-            border: none;
-            transition: 0.5s ease;
-            box-shadow: 0 4px 15px rgba(148, 82, 255, 0.3);
-        }
-
-        .btn-custom-gradient:hover {
-            background-position: right center; /* Efek gradasi bergerak saat di-hover */
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 184, 124, 0.4);
-        }
-
-        /* --- FOOTER GRADIENT & TEXT MENARIK --- */
-        footer {
-            /* Gradasi footer yang kaya warna dari biru ke tosca */
-            background: linear-gradient(135deg, #0d82b5 0%, #129dd3 50%, #08b89d 100%);
-            margin-top: auto;
-            position: relative;
-            box-shadow: 0 -10px 25px rgba(0,0,0,0.1);
-        }
-
-        .footer-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .footer-social-btn {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none;
+/* === 5. CUSTOM BUTTONS === */
+.custom-btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    padding: 12px 32px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(20, 143, 205, 0.2);
     transition: all 0.3s ease;
 }
-.footer-social-btn:hover {
-    background: rgba(255,255,255,0.35);
-    color: #fff;
-    transform: translateY(-3px);
+
+.custom-btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px); /* Efek tombol terangkat */
+    box-shadow: 0 6px 20px rgba(20, 143, 205, 0.3);
 }
 
-        .footer-icon-img {
-            width: 85px; 
-            height: 85px;
-            object-fit: contain;
-            background-color: white; 
-            padding: 5px; 
-            border-radius: 18px; /* Lebih membulat */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan ikon */
-            margin-bottom: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 3px;
-            background: linear-gradient(rgb(25, 80, 126), rgb(255, 101, 247)) padding-box,
-                linear-gradient(45deg, #9452ff 0%, #4ac1e0 50%, #00b87c 100%) border-box;
-             border: 3px solid transparent;
-        }
+.custom-btn-outline {
+    background-color: #ffffff;
+    color: var(--primary-blue);
+    border: 1px solid rgba(20, 143, 205, 0.3);
+    padding: 12px 32px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
 
-        /* Efek mengambang saat kursor diarahkan ke ikon */
-        .footer-icon-img:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-            background: linear-gradient(white, white) padding-box,
-                        linear-gradient(45deg, #00b87c 0%, #4ac1e0 50%, #9452ff 100%) border-box;
-        }
+.custom-btn-outline:hover, .custom-btn-outline:active {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
-        /* Styling teks footer baru */
-        .footer-text {
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            text-transform: uppercase; /* Huruf kapital semua agar rapi */
-            text-shadow: 1px 2px 4px rgba(0,0,0,0.3); /* Efek timbul */
-            margin: 0;
-        }
+/* === 6. ANIMATION & IMAGES === */
+.hero-img {
+    max-height: 750px; /* Mencegah gambar terlalu raksasa di layar besar */
+    object-fit: contain;
 
-        /* --- RESPONSIVE DESIGN (UNTUK HP) --- */
-        @media (max-width: 768px) {
-            .text-gradient-19 { font-size: 6.5rem; }
-            .text-juta { font-size: 2.8rem; }
-            .text-gradient-pendidikan { font-size: 3.2rem; }
-            .footer-icon-img { width: 70px; height: 70px; }
-            .footer-text { font-size: 0.8rem; }
-            .btn-custom-gradient { padding: 10px 30px; font-size: 1rem; }
-        }
+    width: 100%;            /* Pastikan width juga diatur agar img-fluid bekerja optimal */
+    height: auto;           /* Menjaga rasio aspek */
+}
 
+/* Animasi melayang untuk ilustrasi 3D */
+.float-animation {
+    animation: floating 3.5s ease-in-out infinite;
+}
 
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
 
+/* === 7. RESPONSIVE FIXES (Untuk Mobile) === */
+@media (max-width: 991px) {
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        /* === FOOTER BACKGROUND DEKORASI === */
+    .hero-img {
+        max-height: 400px; /* Di HP jangan terlalu tinggi agar teks di bawahnya kelihatan */
+        margin-top: 20px;
+}
+}
 
-/* Blob cahaya kiri atas */
-.footer-blob-1 {
-    width: 350px;
-    height: 350px;
+/* === 8. FORM SECTION STYLING === */
+.form-section {
+    flex-grow: 1; /* Agar form ke tengah vertikal jika layar tinggi */
+}
+
+.form-title {
+    font-size: 2rem;
+    color: var(--text-dark);
+}
+
+.form-subtitle {
+    font-size: 0.9rem;
+}
+
+.custom-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px;
+    padding-left: 2px;
+}
+
+.custom-input {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); /* Memberikan efek bayangan sangat tipis */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Saat input sedang diisi / di-klik */
+.custom-input:focus {
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(20, 143, 205, 0.15);
+    border: none;
+    outline: none;
+}
+
+/* === 9. TAMPILAN PRODUK STYLING === */
+.section-title {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.feature-card {
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-feature {
+    width: 100%;
+    aspect-ratio: 1/1; /* Membuat gambar kotak sempurna */
+    object-fit: cover;
+    border-radius: 40px; /* Membuat sudut sangat melengkung sesuai gambar */
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
-    transform: translate(-30%, -30%);
-    pointer-events: none;
+    object-fit: cover;
 }
 
-/* Blob cahaya kanan bawah */
-.footer-blob-2 {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,255,200,0.10) 0%, transparent 70%);
-    transform: translate(30%, 30%);
-    pointer-events: none;
+.extra-small {
+    font-size: 0.75rem;
 }
 
-/* Pola titik grid */
-.footer-dots {
-    background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
-    background-size: 28px 28px;
-    pointer-events: none;
+.promo-banner {
+    border-left: 5px solid var(--primary-blue);
 }
 
-/* Ikon dekoratif mengambang */
-.footer-deco-icon {
+/* Pricing Cards */
+.pricing-card {
+    background: #fff;
+    border: 1.5px solid #e0e7ff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.1);
+}
+
+.pricing-card.featured {
+    border: 2px solid #22c55e; /* Hijau untuk yang terpopuler */
+}
+
+/* Badge Icons */
+.icon-box .badge-icon {
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.light-blue { background-color: #e0f2fe; color: #0ea5e9; }
+.light-green { background-color: #dcfce7; color: #22c55e; }
+
+.package-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.price-wrapper {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-right: 5px;
+}
+
+.duration {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+/* Savings Box */
+.savings-box {
+    background-color: #f0fdf4;
+    border: 1px dashed #22c55e;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.savings-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #166534;
+    font-weight: 500;
+}
+
+/* List Items */
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.benefit-list li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    color: #475569;
+}
+
+.check-icon {
+    color: #22c55e;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* Popular Badge */
+.popular-badge {
     position: absolute;
-    color: #ffffff;
-    pointer-events: none;
-    animation: floatIcon 6s ease-in-out infinite alternate;
+    top: 20px;
+    right: -10px;
+    background-color: #fbbf24;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Tiap ikon sedikit beda timing agar tidak bergerak bersamaan */
-.footer-deco-icon:nth-child(4) { animation-delay: 0s; }
-.footer-deco-icon:nth-child(5) { animation-delay: 1s; }
-.footer-deco-icon:nth-child(6) { animation-delay: 2s; }
-.footer-deco-icon:nth-child(7) { animation-delay: 0.5s; }
-.footer-deco-icon:nth-child(8) { animation-delay: 1.5s; }
-.footer-deco-icon:nth-child(9) { animation-delay: 2.5s; }
-.footer-deco-icon:nth-child(10) { animation-delay: 3s; }
-.footer-deco-icon:nth-child(11) { animation-delay: 3.5s; }
-
-@keyframes floatIcon {
-    0%   { transform: translateY(0px) rotate(var(--r, 0deg)); }
-    100% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* SVG lines pointer-events none */
-.footer-svg-lines {
-    pointer-events: none;
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary-outline {
+    background: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.btn-primary-outline:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Grayscale Sponsor Logos */
+.grayscale-logos img {
+    max-height: 35px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.grayscale-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }
