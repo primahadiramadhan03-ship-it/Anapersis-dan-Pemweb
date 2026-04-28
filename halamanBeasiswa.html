@@ -1,0 +1,139 @@
+<?php include 'logic_beasiswa.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Beasiswa - 19JutaPendidikan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="landingpage.css">
+    <style>
+        .navbar-profile-img { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; }
+        .filter-card { border: none; border-radius: 15px; position: sticky; top: 100px; }
+        .card-link { text-decoration: none; color: inherit; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg py-3 sticky-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="beranda.php">19JutaPendidikan</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="beranda.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="beasiswa.php">Beasiswa</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="profil.php">
+                            <img src="foto-profil-user.jpg" alt="Profile" class="navbar-profile-img shadow-sm">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-3">
+                <div class="card filter-card shadow-sm p-4">
+                    <h5 class="fw-bold mb-4">Filter Beasiswa</h5>
+                    <form action="beasiswa.php" method="GET">
+                        
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold">Cari Nama Beasiswa</label>
+                            <input type="text" name="cari" class="form-control" placeholder="Ketik kata kunci..." value="<?= $search ?>">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold">Jenjang Pendidikan</label>
+                            <select name="jenjang" class="form-select">
+                                <option value="">Semua Jenjang</option>
+                                <option value="SMA" <?= ($f_jenjang == 'SMA') ? 'selected' : '' ?>>SMA/SMK</option>
+                                <option value="D3" <?= ($f_jenjang == 'D3') ? 'selected' : '' ?>>Diploma (D3)</option>
+                                <option value="S1" <?= ($f_jenjang == 'S1') ? 'selected' : '' ?>>Sarjana (S1)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold">Tipe Pendanaan</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipe" value="" id="t1" checked>
+                                <label class="form-check-label" for="t1">Semua</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipe" value="Fully Funded" id="t2" <?= ($f_tipe == 'Fully Funded') ? 'selected' : '' ?>>
+                                <label class="form-check-label" for="t2">Fully Funded</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipe" value="Partial" id="t3">
+                                <label class="form-check-label" for="t3">Partial Funding</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2">Terapkan Filter</button>
+                        <a href="beasiswa.php" class="btn btn-link w-100 mt-2 text-decoration-none small text-muted">Reset</a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold mb-0">Daftar Beasiswa</h4>
+                    <span class="text-muted small">Menampilkan <?= count($hasil_filter) ?> Beasiswa</span>
+                </div>
+
+                <div class="row g-4">
+                    <?php if(count($hasil_filter) > 0): ?>
+                        <?php foreach($hasil_filter as $row): ?>
+                        <div class="col-md-6">
+                            <a href="uiDetailBeasiswa.php?id=<?= $row['id'] ?>" class="card-link">
+                                <div class="feature-card h-100 bg-white shadow-sm rounded-4 p-3 border-0">
+                                    <img src="beasiswa.jpg" alt="Beasiswa" class="img-feature mb-4" style="height: 180px; width: 100%; object-fit: cover; border-radius: 12px;">
+                                    <span class="badge bg-primary-subtle text-primary mb-2"><?= $row['tipe'] ?></span>
+                                    <h5 class="fw-bold mb-2"><?= $row['judul'] ?></h5>
+                                    <p class="small text-muted mb-3">Jenjang: <?= $row['jenjang'] ?> | <?= $row['lokasi'] ?></p>
+                                    <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                                        <span class="text-danger small fw-bold">Deadline: <?= $row['deadline'] ?></span>
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+
+                    <div class="row g-4">
+                    <?php if(count($hasil_filter) > 0): ?>
+                        <?php foreach($hasil_filter as $row): ?>
+                        <div class="col-md-6">
+                            <a href="uiDetailBeasiswa.php?id=<?= $row['id'] ?>" class="card-link">
+                                <div class="feature-card h-100 bg-white shadow-sm rounded-4 p-3 border-0">
+                                    <img src="beasiswa.jpg" alt="Beasiswa" class="img-feature mb-4" style="height: 180px; width: 100%; object-fit: cover; border-radius: 12px;">
+                                    <span class="badge bg-primary-subtle text-primary mb-2"><?= $row['tipe'] ?></span>
+                                    <h5 class="fw-bold mb-2"><?= $row['judul'] ?></h5>
+                                    <p class="small text-muted mb-3">Jenjang: <?= $row['jenjang'] ?> | <?= $row['lokasi'] ?></p>
+                                    <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                                        <span class="text-danger small fw-bold">Deadline: <?= $row['deadline'] ?></span>
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+
+                        <div class="col-12 text-center py-5">
+                            <img src="no-data.svg" alt="Not Found" style="width: 150px;" class="mb-3">
+                            <p class="text-muted">Maaf, beasiswa yang kamu cari tidak ditemukan.</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Lomba</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="landingpage.css">
+    
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg py-3 sticky-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="beranda.php">19JutaPendidikan</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="beranda.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lomba.php">Lomba</a></li>
+                    <li class="nav-item"><a class="nav-link" href="beasiswa.php">Beasiswa</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="profil.php">
+                            <img src="foto-profil-user.jpg" alt="Profile" class="navbar-profile-img shadow-sm">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Temukan Kompetisi Impianmu</h2>
+                <p class="text-muted">Asah bakatmu dan raih prestasi di berbagai ajang bergengsi.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <a href="uiDetailLomba.html" class="card-link">
+                        <div class="feature-card bg-white h-100 shadow-sm rounded-4 p-3">
+                            <img src="lomba coding.jpg" alt="Lomba Coding" class="img-feature mb-4">
+                            <h3 class="feature-title">National Hackathon 2026: Inovasi Digital</h3>
+                            <p class="feature-desc text-muted">Tunjukkan kemampuan kodingmu dalam membangun solusi untuk permasalahan sosial di era digital...</p>
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top">
+                                <img src="berita lomba.png" class="avatar-img me-2" alt="Penyelenggara">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Tech Community</p>
+                                    <p class="mb-0 text-muted extra-small">Deadline: 15 Mei 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="uiDetailLomba.php?id=2" class="card-link">
+                        <div class="feature-card bg-white h-100 shadow-sm rounded-4 p-3">
+                            <img src="lomba ui.jpg" alt="Lomba Desain" class="img-feature mb-4">
+                            <h3 class="feature-title">Creative UI/UX Design Challenge</h3>
+                            <p class="feature-desc text-muted">Kompetisi desain antarmuka aplikasi tingkat nasional dengan total hadiah puluhan juta rupiah...</p>
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top">
+                                <img src="bbc.png" class="avatar-img me-2" alt="Penyelenggara">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Creative Hub ID</p>
+                                    <p class="mb-0 text-muted extra-small">Deadline: 20 Juni 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="uiDetailLomba.php?id=3" class="card-link">
+                        <div class="feature-card bg-white h-100 shadow-sm rounded-4 p-3">
+                            <img src="LKTI.jpg" alt="Lomba Karya Tulis" class="img-feature mb-4">
+                            <h3 class="feature-title">Lomba Karya Tulis Ilmiah Nasional (LKTIN)</h3>
+                            <p class="feature-desc text-muted">Sampaikan ide brilianmu melalui tulisan ilmiah bertema keberlanjutan lingkungan hidup...</p>
+                            <div class="d-flex align-items-center mt-4 pt-3 border-top">
+                                <img src="uns.png" class="avatar-img me-2" alt="Penyelenggara">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Universitas Sebelas Maret</p>
+                                    <p class="mb-0 text-muted extra-small">Deadline: 01 Juli 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
