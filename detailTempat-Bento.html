@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Tempat - 19JutaPendidikan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="landingpage.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar tetap sama -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="beranda.php">19JutaPendidikan</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="beranda.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="peta.php">Peta Edukasi</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="profil.php">
+                            <img src="foto-profil-user.jpg" alt="Profile" class="rounded-circle shadow-sm" width="40" height="40">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="beranda.html" class="text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="halamanTempatEdukaif.html" class="text-decoration-none">Cari Lokasi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Bento Kopi UNS</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5">
+            <!-- Kolon Kiri: Konten Utama -->
+            <div class="col-lg-8">
+                <img src="Bento.jpg" class="img-fluid rounded-4 mb-4 shadow-sm w-100" alt="Suasana Bento Kopi">
+                
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h1 class="fw-bold">Bento Kopi UNS</h1>
+                    <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Buka Sekarang</span>
+                </div>
+                
+                <p class="lead text-muted mb-4">Tempat favorit mahasiswa UNS untuk nugas dengan suasana semi-outdoor yang asri dan tenang.</p>
+
+                <h4 class="fw-bold mb-3">Tentang Tempat Ini</h4>
+                <p>Bento Kopi UNS menawarkan konsep area belajar terbuka dan tertutup (indoor AC). Tempat ini didesain khusus agar nyaman bagi pelajar dan mahasiswa yang ingin mengerjakan tugas dalam durasi lama tanpa merasa terganggu oleh kebisingan jalan raya.</p>
+
+                <h4 class="fw-bold mt-5 mb-3">Fasilitas Unggulan</h4>
+                <div class="row g-3">
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 border rounded-3 bg-white text-center">
+                            <i class="bi bi-wifi fs-3 text-primary"></i>
+                            <p class="mb-0 mt-2 small fw-bold">WiFi Cepat</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 border rounded-3 bg-white text-center">
+                            <i class="bi bi-lightning-charge fs-3 text-warning"></i>
+                            <p class="mb-0 mt-2 small fw-bold">Banyak Colokan</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 border rounded-3 bg-white text-center">
+                            <i class="bi bi-wind fs-3 text-info"></i>
+                            <p class="mb-0 mt-2 small fw-bold">Area AC</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="fw-bold mt-5 mb-3">Tips Belajar di Sini</h4>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent border-0 ps-0">
+                        <i class="bi bi-info-circle-fill text-primary me-2"></i> Datanglah sebelum jam 4 sore untuk mendapatkan meja di area indoor AC.
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 ps-0">
+                        <i class="bi bi-info-circle-fill text-primary me-2"></i> Gunakan earphone jika ingin fokus lebih dalam di area semi-outdoor.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kolon Kanan: Informasi Sidebar -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm p-4 rounded-4 sticky-top" style="top: 100px;">
+                    <h5 class="fw-bold mb-4">Informasi Lokasi</h5>
+                    
+                    <p class="small text-muted mb-1">Kategori</p>
+                    <p class="fw-bold"><span class="badge bg-primary-subtle text-primary">Caffe</span></p>
+
+                    <p class="small text-muted mb-1">Jam Operasional</p>
+                    <p class="fw-bold">09:00 - 00:30 WIB</p>
+
+                    <p class="small text-muted mb-1">Alamat</p>
+                    <p class="fw-bold small">Jl. Agung Timur no 14, Mojosongo, Jebres, Surakarta.</p>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <!-- Tombol Google Maps -->
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-primary py-3 fw-bold rounded-3">
+                            <i class="bi bi-geo-alt-fill me-2"></i>Petunjuk Jalan (Maps)
+                        </a>
+                        <!-- Link ke Akun Official -->
+                        <a href="https://instagram.com/bentokopi.uns" class="btn btn-outline-dark py-2 border-1 rounded-3">
+                            <i class="bi bi-instagram me-2"></i>Instagram Official
+                        </a>
+                    </div>
+
+                    <hr class="my-4">
+                    
+                    <div class="text-center">
+                        <p class="small text-muted mb-2">Punya pertanyaan?</p>
+                        <a href="#" class="text-decoration-none fw-bold"><i class="bi bi-whatsapp me-1"></i> Hubungi Pengelola</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

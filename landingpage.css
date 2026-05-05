@@ -424,3 +424,77 @@ body {
             color: inherit;
             display: block;
         }
+
+        /* Style khusus untuk halaman detail */
+        .detail-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .sidebar-card {
+            position: sticky;
+            top: 100px; /* Menempel saat scroll */
+            border: none;
+            border-radius: 20px;
+        }
+        .info-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .info-value {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .section-heading {
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 15px;
+            margin: 30px 0 20px;
+        }
+        .navbar-profile-img {
+            width: 40px; height: 40px; object-fit: cover; border-radius: 50%;
+        }
+
+         :root {
+            --primary-color: #0d6efd;
+            --soft-bg: #f8f9fa;
+        }
+        .filter-pill {
+            transition: all 0.3s ease;
+            border: 1px solid #dee2e6;
+            background: white;
+            color: #6c757d;
+        }
+        .filter-pill:hover, .filter-pill.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .sticky-sidebar {
+            top: 100px;
+        }
+        .feature-icon-box {
+            transition: transform 0.2s;
+        }
+        .feature-icon-box:hover {
+            transform: scale(1.05);
+        }
+
+         .filter-btn {
+            transition: all 0.3s ease;
+            border: 1px solid #dee2e6;
+            background-color: white;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+        }
